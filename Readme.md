@@ -1,6 +1,6 @@
 # ORM Generator
 
-This is a simple tool to generate an ORM Map from three other input textures.
+This is a simple tool to generate an [ORM Map](https://forum.reallusion.com/457280/What-does-the-ORM-Map-Do) from three other input textures.
 
 - The **Red** channel of the first input texture (occlusion file) is **AO** value.
 - The **Green** channel of the second input texture (roughness file) is **Roughness** value.
