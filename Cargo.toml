@@ -1,0 +1,19 @@
+[package]
+name = "orm_generator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = { version = "0.27.2", features = [
+    "default",
+    "__screenshot", # __screenshot is so we can dump a screenshot using EFRAME_SCREENSHOT_TO
+] }
+
+egui = "0.27.2"
+
+egui_extras = { version = "0.27.2", features = ["default", "image"] }
+env_logger = "0.11.3"
+image = "0.25.1"
+log = "0.4.21"
+rfd = "0.14.1"
+
