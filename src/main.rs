@@ -66,6 +66,15 @@ impl ORMGeneratorApp {
                 let metallic_img = ImageReader::open( self.metallic_path.to_owned()).unwrap().decode().unwrap();
                 let metallic_img = metallic_img.to_rgb8();
 
+                if width != roughness_img.width() || height != roughness_img.height() || width != metallic_img.width() || height != metallic_img.height() {
+                    rfd::MessageDialog::new().set_title("Error!")
+                    .set_level(rfd::MessageLevel::Error)
+                    .set_description(format!("Input textures do not have same size, occlusion: {}x{}, roughness: {}x{}, metallic: {}x{}", width, height, 
+                        roughness_img.width(), roughness_img.height(), metallic_img.width(), metallic_img.height()))
+                    .set_buttons(rfd::MessageButtons::Ok).show();
+                
+                    return;
+                }
 
                 let mut imgbuf = image::ImageBuffer::new(width, height);
                 for (x, y, pixel) in imgbuf.enumerate_pixels_mut() {
